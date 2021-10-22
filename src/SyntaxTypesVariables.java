@@ -80,7 +80,7 @@ public class SyntaxTypesVariables {
         // How is the above example different from the code block below?
 
 
-        int three = (int) "three";
+        //int three = (int) "three";
 
         //output: java: incompatible types: java.lang.String cannot be converted to int
 
