@@ -16,7 +16,7 @@ public class ControlFlowExercise {
         //Solution 1a:
         int i = 5;
 
-        while (i >= 15) {
+        while (i <= 15) {
             System.out.println("i is " + i);
             i++;
         }
