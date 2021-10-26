@@ -36,6 +36,23 @@ public class StringExercise {
             //I can do backslashes \, double backslashes \\,
             //and the amazing triple backslash \\\!
 
+            //TA Example:
+
+            //String myString;
+
+            //myString = "We don't need no education \nWe don't need no thought control";
+                //System.out.println(myString);
+
+            //myString = "\nCheck \"this\" out!, \"s inside of \"s!";
+                //System.out.println(myString);
+
+            //myString = "\nIn windows, the main drive is usually C:\\";
+                //System.out.println(myString);
+
+            //myString = "\nI can do backslashes \\, double backslashes \\\\, and triple backslashes \\\\\\!";
+                //System.out.println(myString);
+
+
 
         //2. Create a class named Bob with a main method for the following exercise.
 
@@ -48,21 +65,27 @@ public class StringExercise {
             //Write the Java code necessary so that a user of your command line application can have a conversation with Bob.
 
                 Scanner sc = new Scanner (System.in);
+                boolean keepTalking;
 
-
+            do {
                 System.out.println("\nBOB: \"You wanted to talk to me?!\"");
                 String userInput = sc.nextLine();
 //                System.out.println(userInput);
 
-                if (userInput.endsWith("?")){
+                if (userInput.endsWith("?")) {
                     System.out.println("Sure.");
-                } else if(userInput.endsWith("!")){
+                } else if (userInput.endsWith("!")) {
                     System.out.println("Whoa, chill out!");
-                } else if (userInput.equals("")){
+                } else if (userInput.equals("")) {
                     System.out.println("Fine, Be that way!");
                 } else {
                     System.out.println("Whatever.");
                 }
 
+
+
+                System.out.println("Would you like to keep talking to me?(y/n)");//line 87 - 89, along with do while loop, and boolean at line 68; allows the user to have an option to continue talking, ie y/n.
+                keepTalking = sc.nextLine().equalsIgnoreCase("y");
+            } while (keepTalking);
     }
 }
