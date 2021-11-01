@@ -25,11 +25,11 @@ public class Candy {//should always be capitalized.
 
     public static void main(String[] args) {
 
-        Candy unknownCandy = new Candy("funky candy");
+//        Candy unknownCandy = new Candy("funky candy");
 
-        System.out.println("unknownCandy.name = " + unknownCandy.name);
-        System.out.println("unknownCandy.size = " + unknownCandy.size);
-        unknownCandy.talkaboutCandy();
+//        System.out.println("unknownCandy.name = " + unknownCandy.name);
+//        System.out.println("unknownCandy.size = " + unknownCandy.size);
+//        unknownCandy.talkaboutCandy();
 
         Candy funsizeSnickers = new Candy("Snickers", "fun-size");//second constructor
 
