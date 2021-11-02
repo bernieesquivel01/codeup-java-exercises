@@ -4,12 +4,24 @@
 //
  public class Person {
     private String name;
+    //private int age;//blocks from access.
+    protected int age; //shares with any of the subclasses.
+
 
     // The class should have a constructor that accepts a `String` value and sets
     //the person's name to the passed string.
+
+    //constructor
+//    public Person(){};//created this to work with Employee.java; extends example.
+
     public Person(String name){
         //sets name
         this.name = name;
+    }
+
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
     }
 
     public String getName(){
