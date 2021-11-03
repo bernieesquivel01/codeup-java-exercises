@@ -1,30 +1,14 @@
-import java.util.Enumeration;
 import java.util.Scanner;
 
+//Create a class named MethodsExercises. Inside of your class, write code to create the specified methods. Test your code by creating a main method and calling each of the methods you've created.
 public class MethodsExercises {
-
-    public static int getInteger(int min, int max) {
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
-        if (input > max || input < min) {
-            System.out.printf("Invalid input! Enter a number between %s and %s: ", min, max);
-            return getInteger(min, max);
-        }
-        System.out.printf("You entered %s!", input);
-        return input;
-    }
-
-    public static void main (String[]args){
-                System.out.println(add(3.3, 9.6));
-                System.out.println(subtract(6, 3));
-                System.out.println(multiply(5, 4));
-                System.out.println(divide(8, 4));
-                System.out.println(modulus(5, 36));
-
-
-    }
-
-    //Solution 1:
+    //1.Basic Arithmetic
+    //1a. Create four separate methods. Each will perform an arithmetic operation:
+    //Addition
+    //Subtraction
+    //Multiplication
+    //Division
+    //1b. Each function needs to take two parameters/arguments so that the operation can be performed.
     public static double add(double num1, double num2){
         return num1 + num2;
     }
@@ -38,57 +22,68 @@ public class MethodsExercises {
     }
 
     public static double divide(double num1, double num2){
-        return num1/num2;
+        return num1 / num2;
     }
-//            //d. Add a modulus method that finds the modulus of two numbers.
-//
-//    //Solution 1d:
+
+    //1d. Add a modulus method that finds the modulus of two numbers.
     public static double modulus(double num1, double num2){
         return num1%num2;
     }
 
-            //Food for thought: What happens if we try to divide by zero? What should happen?
-        //Bonus
-            //a. Create your multiplication method without the * operator (Hint: a loop might be helpful).
+    //2. Create a method that validates that user input is in a certain range
+    //The method signature should look like this: public static int getInteger(int min, int max);
 
-//            public static double bonusMultiply(double num1, double num2){
-//                double total = 0;
-//                for (int i = 0, i > num2, i += 1){;
-//                    total += num1;
-//                }
-//                return total;
-//                System.out.println(double bonusMultiply);
-//            }
+    //and is used like this:
 
+    //System.out.print("Enter a number between 1 and 10: ");
+    //int userInput = getInteger(1, 10);
+    //If the input is invalid, prompt the user again.
 
-            //b. Do the above with recursion.
+    //Hint: recursion might be helpful here!
 
-            //public static double recursionMultiply(double num1, double num2, double total){
-                //if (num2>0) {
-                    //return recursionMultiply(num1, num2 -1, total + num1);
-                //} else {
-                    //return total;
-                //}
-            //}
+    public static int getInteger(int min, int max){
+        Scanner sc = new Scanner(System.in);//allows user to input info
+        int input = sc.nextInt();
+        if (input > max || input < min){
+            System.out.printf("Invalid entry! Please enter a number between %s and %s: ", min, max);
+            return getInteger(min, max);
+        }
+        System.out.printf("You entered %s!", input);
+        return input;
 
+    }
 
+    //3. Calculate the factorial of a number.
 
+    //Prompt the user to enter an integer from 1 to 10.
+    //Display the factorial of the number entered by the user.
+    //Ask if the user wants to continue.
+    //Use a for loop to calculate the factorial.
+    //Assume that the user will enter an integer, but verify it’s between 1 and 10.
+    //Use the long type to store the factorial.
+    //Continue only if the user agrees to.
+    //A factorial is a number multiplied by each of the numbers before it.
+    //Factorials are denoted by the exclamation point (n!). Ex:
 
-   //2. Create a method that validates that user input is in a certain range
-
-        //The method signature should look like this:
-        //public static int getInteger(int min, int max);
-        //and is used like this:
-            //System.out.print("Enter a number between 1 and 10: ");
-            //int userInput = getInteger(1, 10);
-        //If the input is invalid, prompt the user again.
-
-        //Hint: recursion might be helpful here!
-
-        //Solution 2:
-
-
+    //1! = 1               = 1
+    //2! = 1 x 2           = 2
+    //3! = 1 x 2 x 3       = 6
+    //4! = 1 x 2 x 3 x 4   = 24
 
 
+    public static void main(String[] args) {
+        //1c. Test your methods and verify the output.
+        System.out.println(add(5, 4));
+        System.out.println(subtract(9, 8));
+        System.out.println(multiply(3, 2));
+        System.out.println(divide(20, 4));
+        System.out.println(modulus(8, 4));
+        //Food for thought: What happens if we try to divide by zero? What should happen?
+
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);//sets min and max number!
+
+
+    }
 
 }
