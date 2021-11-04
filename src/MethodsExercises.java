@@ -71,6 +71,18 @@ public class MethodsExercises {
     //4! = 1 x 2 x 3 x 4   = 24
 
 
+    //4. Create an application that simulates dice rolling.
+
+    //Ask the user to enter the number of sides for a pair of dice.
+    //Prompt the user to roll the dice.
+    //"Roll" two n-sided dice, display the results of each, and then ask the user if he/she wants to roll the dice again.
+    //Use static methods to implement the method(s) that generate the random numbers.
+    //Use the .random method of the java.lang.Math class to generate random numbers.
+
+//    public static int rollDice (int sides){
+//
+//    }
+
     public static void main(String[] args) {
         //1c. Test your methods and verify the output.
         System.out.println(add(5, 4));

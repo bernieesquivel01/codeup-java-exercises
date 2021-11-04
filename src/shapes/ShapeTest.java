@@ -8,14 +8,29 @@ public class ShapeTest {
 
     public static void main(String[] args) {
 
-        Rectangle box1 = new Rectangle(5, 4);
+        //Rectangle box1 = new Rectangle(5, 4);
 
-            System.out.println("Area of rectangle is: " + box1.getArea());
-            System.out.println("Perimeter of rectangle is: " + box1.getPerimeter());
+            //System.out.println("Area of rectangle is: " + box1.getArea());
+            //System.out.println("Perimeter of rectangle is: " + box1.getPerimeter());
 
-        Rectangle box2 = new Square(5);
+        //Rectangle box2 = new Square(5);
 
-            System.out.println("Area of square is: " + box2.getArea());
-            System.out.println("Perimeter of square is: " + box2.getPerimeter());
+            //System.out.println("Area of square is: " + box2.getArea());
+            //System.out.println("Perimeter of square is: " + box2.getPerimeter());
+
+
+        //Modify your ShapesTest class, use it to:
+        //
+        //declare a variable of the type Measurable named myShape.
+        //Test your code by creating instances of both Square and Rectangle and assigning them to myShape so you can display the shape's area and perimeter.
+        Measurable myShape = new Square(5);
+        System.out.println(myShape.getPerimeter());
+        System.out.println(myShape.getArea());
+
+        Measurable myShape1 = new Rectangle(10, 10);
+        System.out.println(myShape1.getPerimeter());
+        System.out.println(myShape1.getArea());
+
+
     }
 }
