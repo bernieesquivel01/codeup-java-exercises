@@ -1,6 +1,6 @@
 package shapes;
 //Inside of shapes, create an abstract Quadrilateral class that extends Shape and implements Measurable. This class should have:
-abstract class Quadrilateral extends Shape implements Measurable{
+public abstract class Quadrilateral extends Shape implements Measurable{
 
     //protected properties for length and width.
     protected double length;
@@ -13,16 +13,16 @@ abstract class Quadrilateral extends Shape implements Measurable{
 
     }
 
-    //methods for getting the length and width.
+    //methods for getting the length and width.(getters)
     public double getLength(){
-        return length;
+        return this.length;
     }
 
     public double getWidth(){
-        return width;
+        return this.width;
     }
 
-    //abstract methods for setting the length and width.
+    //abstract methods for setting the length and width.(setters)
     public abstract void setLength(double length);
 
     public abstract void setWidth(double width);

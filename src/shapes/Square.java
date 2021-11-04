@@ -1,7 +1,7 @@
 package shapes;
 //Create a class named Square, also inside of shapes, that extends Rectangle.
 public class Square extends Quadrilateral {
-    public Square(double side) {
+    public Square(double side) {//since we know that all sides are the same.
         super(side, side);
     }
     //Change your existing Square class to extend Quadrilateral.

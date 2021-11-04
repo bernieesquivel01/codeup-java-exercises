@@ -27,10 +27,13 @@ public class ShapeTest {
         System.out.println(myShape.getPerimeter());
         System.out.println(myShape.getArea());
 
-        Measurable myShape1 = new Rectangle(10, 10);
+        Measurable myShape1 = new Rectangle(4, 5);
         System.out.println(myShape1.getPerimeter());
         System.out.println(myShape1.getArea());
 
+        //What happens if you try to call the getLength or getWidth methods of the myShape variable? Why?
+        //System.out.println(myShape1.getLength());
+        //System.out.println(myShape.getWidth());
 
     }
 }
