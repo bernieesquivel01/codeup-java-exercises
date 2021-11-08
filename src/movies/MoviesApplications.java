@@ -2,7 +2,7 @@ package movies;
 
 import util.Input;
 
-public class MovieApplications {
+public class MoviesApplications {
 
     public static void main(String[] args) {
         moviePrompt();

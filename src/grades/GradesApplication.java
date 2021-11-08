@@ -39,10 +39,10 @@ public class GradesApplication {
 
         //System.out.println(donnie.getName() + "'s grade average is " + donnie.getGradeAverage());//gets the average for given student "Donatello"
 
-        students.put("Michelangelo", mikey);
-        students.put("Donatello", donnie);
-        students.put("Leonardo", leo);
-        students.put("Raphael", raph);
+        students.put("mturtle", mikey);
+        students.put("dturtle", donnie);
+        students.put("lturtle", leo);
+        students.put("rturtle", raph);
 
         //System.out.println(students);
 
@@ -50,13 +50,22 @@ public class GradesApplication {
         System.out.println("Here are the github names for our users:");
         //System.out.println(students);
         for (String username: students.keySet()){
-            System.out.print("|" + username + "|");
+            System.out.print("|" + username + "| ");
         }
-        System.out.println();
-        System.out.println("\nWhat student would you like to see more information on?");
 
+        do {
+            System.out.println();
+            System.out.println("\nWhat student would you like to see more information on?");
+            String keyTyped = input.getString();
 
+            if (students.containsKey(keyTyped)){
+                System.out.printf("Name: %s - GitHub Username: %s \n" + "Current Average: %s \n", students.get(keyTyped).getName(), keyTyped, students.get(keyTyped).getGradeAverage());
+            } else {
+                System.out.println("Sorry, no student found with the GitHub username of " + keyTyped);//if you replace 'out' with 'err'; line will print out red.
+            }
+        }while (input.yesNo("Would you like to see another student?"));
 
+        System.out.println("Goodbye, and have a wonderful day!");
 
     }
 

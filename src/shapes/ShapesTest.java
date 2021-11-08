@@ -4,7 +4,7 @@ package shapes;
 //verify that the getPerimeter and getArea methods return 18 and 20, respectively.
 //create a variable of the type Rectangle named box2 and assign it a new instance of the Square class that has a side value of 5.
 //verify that the getPerimeter and getArea methods return 20 and 25, respectively.
-public class ShapeTest {
+public class ShapesTest {
 
     public static void main(String[] args) {
 
