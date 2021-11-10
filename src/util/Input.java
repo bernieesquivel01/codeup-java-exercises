@@ -16,6 +16,11 @@ public class Input {
         return this.sc.nextLine();
     }
 
+    public String getString(String prompt){
+        System.out.println(prompt);
+        return getString();
+    }
+
 
     public boolean yesNo(String s){
         System.out.println(s);
@@ -24,11 +29,6 @@ public class Input {
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
     }
 
-    //The getInt(int min, int max) method should keep prompting the user for input until they give an integer within the min and max.
-    public int getInt(){
-        System.out.println("Please enter a number.");
-        return this.sc.nextInt();
-    }
 
     public int getInt(int min, int max){
         int input;
@@ -41,23 +41,82 @@ public class Input {
 
     }
 
-
-    //The getDouble method should do the same thing, but with decimal numbers.
-    public double getDouble(){
-        System.out.println("Please double your number.");
-        return this.sc.nextDouble();
-    }
-
-    public double getDouble(double min, double max){
-        double input;
-        do{
-            System.out.printf("Please enter double number between %.2f and %.2f\n", min, max);
-            input = this.sc.nextDouble();
-        }while(input < min || input > max);
-
-            return input;
+    public int getInt(){
+        try{
+            String s = getString();
+        return Integer.valueOf(s);
+    } catch (NumberFormatException e){
+            System.out.println("Please enter an integer:");
+            return getInt();
         }
     }
 
 
+//    public int getInt(int min, int max){
+//        int  num;
+//        try{
+//            num = Integer.parseInt(getString("Please enter a number between " +min+ " and " +max));
+//            System.out.println("You entered: " + num);
+//        } catch(NumberFormatException e){
+//            return getInt(min, max);
+//        }
+//
+//        if (num < min || num > max){
+//            System.out.println("Invalid entry; please try again!");
+//            return getInt(min, max);
+//        }
+//        return num;
+//    }
+//
+//    public int getInt(){
+//        try{
+//            return Integer.parseInt(getString("Enter another number:"));
+//        } catch (NumberFormatException e){
+//            return getInt();
+//        }
+//    }
+
+
+
+
+
+    //The getDouble method should do the same thing, but with decimal numbers.
+//    public double getDouble(){
+//        System.out.println("Please double your number.");
+//        return this.sc.nextDouble();
+//    }
+//
+//    public double getDouble(double min, double max){
+//        double input;
+//        do{
+//            System.out.printf("Please enter double number between %.2f and %.2f\n", min, max);
+//            input = this.sc.nextDouble();
+//        }while(input < min || input > max);
+//
+//            return input;
+//        }
+//    }
+
+public double getDouble(double min, double max){
+    double decimalNum;
+    try {
+        decimalNum = Double.parseDouble(getString("Please enter a number between " +min+ " and " +max));
+    } catch (NumberFormatException e){
+        return getDouble(min, max);
+    }
+
+    if(decimalNum < min || decimalNum > max){
+        System.out.println("Invalid entry: try again!");
+        return getDouble(min, max);
+    }
+    return decimalNum;
+    }
+    public double getDouble(){
+        try{
+            return Double.parseDouble(getString("Give me another number!"));
+        } catch (NumberFormatException e){
+            return getDouble();
+        }
+    }
+}
 
