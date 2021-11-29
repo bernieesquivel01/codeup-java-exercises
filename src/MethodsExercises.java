@@ -9,26 +9,37 @@ public class MethodsExercises {
     //Multiplication
     //Division
     //1b. Each function needs to take two parameters/arguments so that the operation can be performed.
-    public static double add(double num1, double num2){
+    public static double add(double num1, double num2) {
         return num1 + num2;
     }
 
-    public static double subtract(double num1, double num2){
+    public static double subtract(double num1, double num2) {
         return num1 - num2;
     }
 
-    public static double multiply(double num1, double num2){
+    public static double multiply(double num1, double num2) {
         return num1 * num2;
     }
 
-    public static double divide(double num1, double num2){
+    public static double divide(double num1, double num2) {
         return num1 / num2;
     }
 
     //1d. Add a modulus method that finds the modulus of two numbers.
-    public static double modulus(double num1, double num2){
-        return num1%num2;
+    public static double modulus(double num1, double num2) {
+        return num1 % num2;
     }
+
+
+    //TEST
+//    public static void main(String[] args) {
+//        //1c. Test your methods and verify the output.
+//        System.out.println(add(5, 4));
+//        System.out.println(subtract(9, 8));
+//        System.out.println(multiply(3, 2));
+//        System.out.println(divide(20, 4));
+//        System.out.println(modulus(8, 4));
+    //Food for thought: What happens if we try to divide by zero? What should happen?
 
     //2. Create a method that validates that user input is in a certain range
     //The method signature should look like this: public static int getInteger(int min, int max);
@@ -41,10 +52,10 @@ public class MethodsExercises {
 
     //Hint: recursion might be helpful here!
 
-    public static int getInteger(int min, int max){
+    public static int getInteger(int min, int max) {
         Scanner sc = new Scanner(System.in);//allows user to input info
         int input = sc.nextInt();
-        if (input > max || input < min){
+        if (input > max || input < min) {
             System.out.printf("Invalid entry! Please enter a number between %s and %s: ", min, max);
             return getInteger(min, max);
         }
@@ -52,6 +63,12 @@ public class MethodsExercises {
         return input;
 
     }
+
+    //TEST
+//    public static void main(String[] args) {
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int userInput = getInteger(1, 10);//sets min and max number!
+//    }
 
     //3. Calculate the factorial of a number.
 
@@ -70,6 +87,19 @@ public class MethodsExercises {
     //3! = 1 x 2 x 3       = 6
     //4! = 1 x 2 x 3 x 4   = 24
 
+    public static String factorial(long num){
+        long factorial = 1L;
+        String result = " = ";
+        for (long i = 1L; i <= num; i++){
+            factorial *= i;
+            if (i == num) {
+                result += i;
+            } else {
+                result += i + " x ";
+            }
+        }
+        return factorial + result;
+    }
 
     //4. Create an application that simulates dice rolling.
 
@@ -79,23 +109,33 @@ public class MethodsExercises {
     //Use static methods to implement the method(s) that generate the random numbers.
     //Use the .random method of the java.lang.Math class to generate random numbers.
 
-//    public static int rollDice (int sides){
-//
-//    }
-
-    public static void main(String[] args) {
-        //1c. Test your methods and verify the output.
-        System.out.println(add(5, 4));
-        System.out.println(subtract(9, 8));
-        System.out.println(multiply(3, 2));
-        System.out.println(divide(20, 4));
-        System.out.println(modulus(8, 4));
-        //Food for thought: What happens if we try to divide by zero? What should happen?
-
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);//sets min and max number!
-
-
+    public static void rollDice(int sides, int numberOfDice) {
+        for (int i = 1; i <= numberOfDice; i++) {
+            int result = (int) Math.floor(Math.random() * ((sides - 1) + 1) + 1);
+            System.out.println(result);
+        }
     }
 
+    public static void rollDice() {
+        boolean rollAgain = true;
+        while (rollAgain) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("How many sides does are on a pair of dice?");
+            int sides = sc.nextInt();
+            String answer = " ";
+            while (!answer.equalsIgnoreCase("Yes") && !answer.equalsIgnoreCase("No")) {
+                System.out.println("Roll Again? Yes/No");
+                answer = sc.nextLine();
+            }
+            if (answer.equalsIgnoreCase("No")) {
+                System.out.println("Thanks for playing!");
+                rollAgain = false;
+            }
+        }
+    }
 }
+
+
+
+
+
