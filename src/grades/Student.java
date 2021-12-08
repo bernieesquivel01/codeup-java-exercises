@@ -35,26 +35,26 @@ public class Student {
     }
 
 
-    //Test your Student class by adding a main method and creating Student objects. Verify that you can add grades to each object, and that your getGradeAverage method correctly returns the average of the student's grades.
-//    public static void main(String[] args) {
-//        //creates 'student' object
-//        Student student1 = new Student("Bernie");
-//        Student student2 = new Student("Hudson");
-//
-//        //adds grade to object
-//        student1.addGrade(75);
-//        student1.addGrade(75);
-//        student1.addGrade(80);
-//        student1.addGrade(100);
-//
-//        student2.addGrade(90);
-//        student2.addGrade(90);
-//        student2.addGrade(100);
-//        student2.addGrade(100);
-//
-//        System.out.println(student1.name + "'s Grade average is: " + student1.getGradeAverage());
-//        System.out.println(student2.name + "'s Grade average is: " + student2.getGradeAverage());
-//
-//    }
+//    Test your Student class by adding a main method and creating Student objects. Verify that you can add grades to each object, and that your getGradeAverage method correctly returns the average of the student's grades.
+    public static void main(String[] args) {
+        //creates 'student' object
+        Student student1 = new Student("Bernie");
+        Student student2 = new Student("Hudson");
+
+        //adds grade to object
+        student1.addGrade(75);
+        student1.addGrade(75);
+        student1.addGrade(80);
+        student1.addGrade(100);
+
+        student2.addGrade(90);
+        student2.addGrade(90);
+        student2.addGrade(100);
+        student2.addGrade(100);
+
+        System.out.println(student1.name + "'s Grade average is: " + student1.getGradeAverage());
+        System.out.println(student2.name + "'s Grade average is: " + student2.getGradeAverage());
+
+    }
 
 }
